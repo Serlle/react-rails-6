@@ -3,16 +3,30 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-import Rails from "@rails/ujs"
-import Turbolinks from "turbolinks"
-import * as ActiveStorage from "@rails/activestorage"
-import "channels"
+// Importar las bibliotecas necesarias:
+import React from "react";
+import ReactDOM from "react-dom";
+import Rails from "@rails/ujs";
+import Turbolinks from "turbolinks";
+import * as ActiveStorage from "@rails/activestorage";
+import Root from '../components/Root'
 
-Rails.start()
-Turbolinks.start()
-ActiveStorage.start()
+// Inicializar las bibliotecas:
+Rails.start();
+Turbolinks.start();
+ActiveStorage.start();
 
 // Support component names relative to this directory:
-var componentRequireContext = require.context("components", true);
-var ReactRailsUJS = require("react_ujs");
-ReactRailsUJS.useContext(componentRequireContext);
+const componentRequireContext = require.context("components", true);
+const ReactRailsUJS = require("react_ujs");
+ReactRailsUJS.useContext(componentRequireContext, {
+});
+
+// Renderizar los componentes en el DOM con funcion y no clase:
+document.addEventListener("DOMContentLoaded", () => {
+  ReactDOM.render(
+    <Root />,
+    document.getElementById("Root")
+  );
+});
+
