@@ -72,6 +72,9 @@ development:
     watch_options:
       ignored: '**/node_modules/**'
 
+  plugins:
+    - name: ReactRefreshWebpackPlugin
+
 
 test:
   <<: *default
