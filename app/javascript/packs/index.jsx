@@ -5,7 +5,9 @@ import App from '../components/App'
 // Renderizar los componentes en el DOM con funcion y no clase:
 document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(
-    <App />,
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
     document.getElementById("App")
   );
 });
